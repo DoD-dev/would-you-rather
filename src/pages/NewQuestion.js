@@ -12,7 +12,7 @@ const NewQuestion = () => {
     e.preventDefault();
     const optionOne = document.getElementById("optionOne").value;
     const optionTwo = document.getElementById("optionTwo").value;
-    let question = await dispatch(
+    dispatch(
       handleCreateQuestion(
         {
           author: authendUser,
@@ -22,7 +22,7 @@ const NewQuestion = () => {
         authendUser
       )
     );
-    navigate(`/question/${question.id}`);
+    navigate(`/`, { replace: true });
   };
   return (
     <div className="center question-card">
